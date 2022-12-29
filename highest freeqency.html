@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program to print highest frequency</title>
+</head>
+<body>
+    <script>
+
+function max_freq(arr, n) 
+{
+    let maxcount = 0;
+    let max_freq;
+    for (let i = 0; i < n; i++) {
+        let counter = 0;
+        for (let j = 0; j < n; j++) {
+            if (arr[i] == arr[j])
+                counter++;
+        }
+ 
+        if (counter > maxcount) {
+            maxcount = counter;
+            max_freq = arr[i];
+        }
+    }
+ 
+    return max_freq;
+}
+ 
+
+var arr = [2,3,4,5,6,7,8,7,8,8,1];
+var n = arr.length;
+console.log(max_freq(arr, n));
+
+    </script>
+</body>
+</html>

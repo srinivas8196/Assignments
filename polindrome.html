@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program to check string is polindrome or not</title>
+</head>
+<body>
+    <script>
+
+function Polindrome(name) 
+{
+
+
+    const len = name.length;
+
+// nitin
+// 01234
+
+    for (let i = 0; i < len / 2; i++) 
+    {
+         //   nit                 nit
+     if (name[i] !== name[len - 1 - i]) 
+        {
+         return 'It is not a polindrome';
+        }
+    }
+    return 'It is a polindrome';
+}
+
+
+const name = prompt('Enter a any name: ');
+
+
+const value = Polindrome(name);
+
+console.log(value);
+    </script>
+</body>
+</html>
