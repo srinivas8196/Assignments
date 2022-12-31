@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #countdown {
+      font-size: 72px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="countdown">5</div>
+  <button id="replay" style="display: none;">Replay</button>
+  <script>
+    const countdown = document.getElementById("countdown");
+    const replay = document.getElementById("replay");
+
+    function startRace() {
+      let countdownNumber = 5;
+      const countdownInterval = setInterval(() => {
+        countdownNumber--;
+        countdown.textContent = countdownNumber;
+        if (countdownNumber === 0) {
+          clearInterval(countdownInterval);
+          countdown.textContent = "Go!";
+          replay.style.display = "inline-block";
+        }
+      }, 1000);
+    }
+
+    replay.addEventListener("click", startRace);
+    startRace();
+  </script>
+</body>
+</html>
