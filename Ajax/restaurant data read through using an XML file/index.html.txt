@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          type: "GET",
+          url: "restaurant_data.xml",
+          dataType: "xml",
+          success: function(xml) {
+            $(xml).find("restaurant").each(function() {
+              var name = $(this).attr("name");
+              var address = $(this).attr("address");
+              var type = $(this).attr("type");
+              var color = (type == "sitdown") ? "green" : "red";
+              $("<li style='color:" + color + ";'>" + name + " - " + address + "</li>").appendTo("#restaurant_list");
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Restaurant List</h1>
+    <ul id="restaurant_list">
+    </ul>
+  </body>
+</html>
